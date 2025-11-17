@@ -3,10 +3,7 @@
 FROM odoo:19
  
 USER root
-ENV HOST=${HOST}
-ENV USER=${USER}
-ENV PASSWORD=${PASSWORD}
- 
+
 # لو تحتاج تثبيت أي مكتبات إضافية تقدر تضيفها هنا
 # مثلاً: RUN apt-get update && apt-get install -y git
 

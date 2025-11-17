@@ -4,15 +4,15 @@ services:
   db:
     image: postgres:16
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: odoo19
-      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: railway
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: TXxjPYlxIZUadEigbCXiRijPjONUzQkh
     volumes:
       - odoo19-db-data:/var/lib/postgresql/data
     restart: always
 
   odoo_web:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     depends_on:
@@ -24,12 +24,11 @@ services:
       - ./odoo.conf:/etc/odoo/odoo.conf
       - odoo19-web-data:/var/lib/odoo
     environment:
-      DB_HOST: ${PGHOST}
-      DB_PORT: ${PGPORT}
-      DB_USER: ${PGUSER}
-      DB_PASSWORD: ${PGPASSWORD}
-      DB_NAME: ${PGDATABASE}
-      
+      # هذه متغيرات إذا تريد تستخدمها في odoo (اختياري حسب تكوينك)
+      DB_HOST: dpostgres.railway.internalb
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: TXxjPYlxIZUadEigbCXiRijPjONUzQkh
     restart: always
 
 volumes:

@@ -28,7 +28,8 @@ services:
       DB_PORT: ${PGPORT}
       DB_USER: ${PGUSER}
       DB_PASSWORD: ${PGPASSWORD}
-      db_name: ${PGDATABASE}
+      DB_NAME: ${PGDATABASE}
+      
     restart: always
 
 volumes:

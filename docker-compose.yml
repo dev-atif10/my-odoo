@@ -23,3 +23,6 @@ services:
 volumes:
   odoo19-web-data:
   odoo19-db-data:
+
+
+# {"ODOO_EMAIL_FROM":"Odoo <${{ODOO_SMTP_USER}}>","ODOO_SMTP_HOST":"0","ODOO_SMTP_PASSWORD":"0","ODOO_SMTP_PORT_NUMBER":"0","ODOO_SMTP_USER":"0","RAILWAY_RUN_UID":"0","DB_HOST":"${{Postgres.PGHOST}}","db_name":"${{Postgres.PGDATABASE}}","DB_PASSWORD":"${{Postgres.POSTGRES_PASSWORD}}","DB_PORT":"${{Postgres.PGPORT}}","DB_USER":"${{Postgres.POSTGRES_USER}}"}

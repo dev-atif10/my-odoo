@@ -1,5 +1,4 @@
 
-
 FROM odoo:19
  
 USER root
@@ -10,7 +9,6 @@ USER root
 # غير الأذونات إذا لزم الأمر لمجلد الإضافات
 RUN mkdir -p /customs \
     && chown -R odoo:odoo /customs
-
 USER odoo
 
 EXPOSE 8069

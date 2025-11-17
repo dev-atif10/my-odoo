@@ -12,7 +12,7 @@ services:
     restart: always
 
   odoo_web:
-    build:
+    build: 
       context: .
       dockerfile: Dockerfile
     depends_on:
@@ -24,11 +24,11 @@ services:
       - ./odoo.conf:/etc/odoo/odoo.conf
       - odoo19-web-data:/var/lib/odoo
     environment:
-      # هذه متغيرات إذا تريد تستخدمها في odoo (اختياري حسب تكوينك)
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_USER: odoo19
-      DB_PASSWORD: odoo
+      DB_HOST: ${PGHOST}
+      DB_PORT: ${PGPORT}
+      DB_USER: ${PGUSER}
+      DB_PASSWORD: ${PGPASSWORD}
+      db_name: ${PGDATABASE}
     restart: always
 
 volumes:
